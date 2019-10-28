@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+
+  application:
+    image: docker.pkg.github.com/playdomino/domino-application/domino-application:dev
+    ports:
+     - "8080:80"
+    volumes: 
+     - ./data/dartboard.db:/app/dartboard.db
+    networks:
+     - private-network
+  web:
+    image: docker.pkg.github.com/playdomino/domino-application/domino-web:dev
+    ports:
+     - "80:3000"
+    networks:
+     - private-network
+networks:
+  private-network:
+    driver: bridge
+    attachable: true
