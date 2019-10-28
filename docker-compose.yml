@@ -11,9 +11,9 @@ services:
     networks:
      - private-network
   web:
-    image: docker.pkg.github.com/playdomino/domino-application/domino-web:dev
+    image: docker.pkg.github.com/playdomino/domino-web/domino-web:dev
     ports:
-     - "80:3000"
+     - "80:80"
     networks:
      - private-network
 networks:
