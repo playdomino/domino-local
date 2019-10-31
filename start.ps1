@@ -4,8 +4,9 @@ param (
     [switch]
     $log
 )
+docker-compose.exe pull
 if ($log) {
-    docker-compose up
+    docker-compose.exe up
 }else {
-    docker-compose up -d
+    docker-compose.exe up -d
 }
