@@ -16,6 +16,16 @@ services:
      - "80:3000"
     networks:
      - private-network
+
+  mongo:
+    image: mongo:4.1.6
+    ports:
+     - "27017:27017"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    networks:
+     - private-network
+
 networks:
   private-network:
     driver: bridge
